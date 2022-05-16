@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="510.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.DashboardStockController">
+   <children>
+      <AnchorPane layoutX="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="919.0" style="-fx-background-color: #FFF;">
+         <children>
+            <VBox layoutX="-1.0" prefHeight="510.0" prefWidth="248.0" style="-fx-background-color: #6b70d5;">
+               <children>
+                  <Pane prefHeight="108.0" prefWidth="248.0">
+                     <children>
+                        <ImageView fitHeight="185.0" fitWidth="247.0" layoutX="1.0" layoutY="-68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@background.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="28.0" fitWidth="106.0" layoutX="71.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logowhite.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#ede0e0" layoutX="76.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Where legends are born">
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                        </Text>
+                        <FontAwesomeIconView fill="#f8f6f6" glyphName="CHEVRON_LEFT" layoutX="27.0" layoutY="31.0" onMouseClicked="#gotodashboard" text="" />
+                     </children>
+                  </Pane>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="232.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="248.0" style="-fx-background-color: #6b70d5;" text="Stock" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="#fffbfb" glyphName="CUBES" size="17" />
+                     </graphic>
+                     <padding>
+                        <Insets left="69.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#gotoproduit" prefHeight="52.0" prefWidth="248.0" style="-fx-background-color: #6b70d5;" text="Produits" textFill="#fbfafa">
+                     <graphic>
+                        <FontAwesomeIconView fill="#f8f5f5" glyphName="ANGLE_RIGHT" text="" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="216.0" mnemonicParsing="false" onAction="#gotofournisseurs" prefHeight="52.0" prefWidth="248.0" style="-fx-background-color: #6b70d5;" text="Fournisseurs" textFill="#fbfafa">
+                     <graphic>
+                        <FontAwesomeIconView fill="#f8f5f5" glyphName="ANGLE_RIGHT" text="" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fitHeight="529.0" fitWidth="687.0" layoutX="246.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@background.png" />
+               </image>
+            </ImageView>
+            <Circle fx:id="c2" fill="#1f93ff00" layoutX="579.0" layoutY="235.0" radius="201.0" stroke="#6b70d5" strokeType="INSIDE" strokeWidth="10.0" style="-fx-stroke-dash-array: 50;" />
+            <Circle fx:id="c3" fill="#1f93ff00" layoutX="359.0" layoutY="275.0" radius="101.0" stroke="#6b70d5" strokeType="INSIDE" strokeWidth="10.0" style="-fx-stroke-dash-array: 50;" />
+            <Circle fx:id="c1" fill="#1f93ff00" layoutX="785.0" layoutY="250.0" radius="101.0" stroke="#6b70d5" strokeType="INSIDE" strokeWidth="10.0" style="-fx-stroke-dash-array: 50;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

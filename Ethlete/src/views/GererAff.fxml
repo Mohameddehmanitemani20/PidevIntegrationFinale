@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="1281.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.GererAffController">
+     
+   
+    
+    <children>
+      <Pane layoutY="-144.0" prefHeight="55.0" prefWidth="1198.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="110.0" layoutY="5.0" text="Gestion Des Affectations" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="72.0" fitWidth="55.0" layoutX="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@2038022.png" />
+               </image>
+            </ImageView>
+          
+         </children>
+      </Pane>
+
+
+      <TableView fx:id="formateurs" layoutX="132.0" layoutY="66.0" prefHeight="271.0" prefWidth="334.0">
+         <columns>
+                     <!--<TableColumn fx:id="id_formation" prefWidth="109.0" text="ID" visible="true" />-->
+
+            <TableColumn fx:id="nom_f" prefWidth="109.0" text="Nom" />
+            <TableColumn fx:id="prenom" prefWidth="123.0" text="Prénom" />
+            <TableColumn fx:id="Email" prefWidth="137.0" text="Email" />
+          
+
+
+         </columns>
+      </TableView>
+      
+
+      
+      <TableView fx:id="formations" layoutX="722.0" layoutY="55.0" prefHeight="271.0" prefWidth="334.0">
+         <columns>
+                     <!--<TableColumn fx:id="id_formation" prefWidth="109.0" text="ID" visible="true" />-->
+
+            <TableColumn fx:id="nom" prefWidth="109.0" text="Nom" />
+            <TableColumn fx:id="debut" prefWidth="116.0" text="Date de début" />
+            <TableColumn fx:id="fin" prefWidth="98.0" text="Date de fin" />
+              
+           
+
+
+         </columns>
+      </TableView>
+      
+          <TableView fx:id="affectations" layoutX="1050.0" layoutY="55.0" prefHeight="271.0" prefWidth="116.0">
+         <columns>
+                     <!--<TableColumn fx:id="id_formation" prefWidth="109.0" text="ID" visible="true" />-->
+
+           
+            <TableColumn fx:id="rep" prefWidth="115.0" text="Réponse" />
+           
+
+
+         </columns>
+      </TableView>
+      
+      <Text fill="#893a89" layoutX="14.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Formateurs" wrappingWidth="115.99998474121094">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Text>
+      <Text fill="#893a89" layoutX="585.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Formations">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Text>
+    
+    
+            <JFXButton fx:id="btnInsert" layoutX="683.0" layoutY="351.0" mnemonicParsing="false" onAction="#AjouterAffectation" prefHeight="41.0" prefWidth="181.0" text="AjouterAffectation" />
+      <JFXButton fx:id="aff" layoutX="299.0" layoutY="351.0" mnemonicParsing="false" onAction="#afficherAff" text="Afficher Ses Affectations" />
+      <JFXButton fx:id="suppAff" layoutX="150.0" layoutY="351.0" mnemonicParsing="false" onAction="#suppAff" text="supprimeraffectation" textFill="#d05555" />
+      <JFXButton fx:id="afficherform" layoutX="1108.0" layoutY="351.0" mnemonicParsing="false" onAction="#AfficherFormation" text="Afficher Formation" />
+      <JFXButton fx:id="AfficherFormateur" layoutX="864.0" layoutY="351.0" mnemonicParsing="false" onAction="#AfficherFormateur" text="AfficherFormateurParFormation" />
+      <JFXButton fx:id="afficheForm" layoutX="24.0" layoutY="351.0" mnemonicParsing="false" onAction="#afficheForm" text="AfficherFormateur" textFill="#158039" />
+      <JFXButton fx:id="closeButton" buttonType="RAISED" layoutX="45.0" layoutY="410.0" onAction="#retour" ripplerFill="#c33535" text="&lt;----" textOverrun="CENTER_ELLIPSIS" />
+
+  
+   </children>
+
+</AnchorPane>

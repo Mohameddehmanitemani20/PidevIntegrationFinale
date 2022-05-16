@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="402.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AffichageMatchController">
+       <children>
+      <TableView fx:id="matchv" editable="true" layoutY="56.0" prefHeight="346.0" prefWidth="321.0">
+        <columns>
+          <TableColumn fx:id="equipe1" prefWidth="108.0" text="Equipe1" />
+          <TableColumn fx:id="equipe2" prefWidth="116.0" text="Equipe2" />
+            <TableColumn fx:id="etat" prefWidth="96.0" text="etat" />
+        </columns>
+      </TableView>
+      <Button fx:id="sup" layoutX="591.0" layoutY="291.0" mnemonicParsing="false" onAction="#deleteM" text="Supprimer" />
+      <Button fx:id="modif" layoutX="466.0" layoutY="291.0" mnemonicParsing="false" onAction="#modifM" text="Modifier" />
+      <Button fx:id="add" layoutX="348.0" layoutY="291.0" mnemonicParsing="false" onAction="#addM" text="Ajouter" />
+      <TextField fx:id="equipe1M" layoutX="471.0" layoutY="124.0" />
+      <TextField fx:id="equipe2M" layoutX="471.0" layoutY="74.0" />
+      <Label layoutX="360.0" layoutY="79.0" text="Equipe1" />
+      <Label layoutX="360.0" layoutY="129.0" text="Equipe2" />
+      <Label layoutX="380.0" layoutY="191.0" text="Etat" />
+      <ComboBox fx:id="etatM" layoutX="495.0" layoutY="186.0" prefWidth="150.0" />
+      <TextField fx:id="textfield" layoutX="134.0" layoutY="14.0" />
+      <Label layoutX="332.0" layoutY="19.0" text="Search by team2" />
+      <Label layoutX="14.0" layoutY="19.0" text="Searh by team1" />
+      <TextField fx:id="textfield1" layoutX="471.0" layoutY="14.0" />
+      <Button fx:id="btn1" layoutX="443.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Go back to Journe" />
+      <ComboBox fx:id="journep" layoutX="495.0" layoutY="239.0" prefWidth="150.0" />
+      <Label layoutX="376.0" layoutY="244.0" text="Journe" />
+   </children>
+    
+</AnchorPane>

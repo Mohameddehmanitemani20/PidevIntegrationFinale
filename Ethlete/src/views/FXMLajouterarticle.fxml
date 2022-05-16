@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="493.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.FXMLajouterarticleController">
+   <children>
+      <TextField fx:id="tftitre" layoutX="177.0" layoutY="52.0" prefHeight="25.0" prefWidth="306.0" promptText="Titre" />
+      <TextField fx:id="tfsujet" layoutX="177.0" layoutY="109.0" prefHeight="25.0" prefWidth="306.0" promptText="Sujet" />
+      <TextField fx:id="tfcontenu" alignment="TOP_LEFT" layoutX="177.0" layoutY="166.0" prefHeight="218.0" prefWidth="306.0" promptText="Contenu" />
+      <Button layoutX="304.0" layoutY="430.0" mnemonicParsing="false" onAction="#ajouterarticle" text="Ajouter" />
+   </children>
+</AnchorPane>

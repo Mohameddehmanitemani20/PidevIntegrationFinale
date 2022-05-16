@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="views.InvitationUIController">
+     <children>
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="621.0">
+         <children>
+            <Label layoutX="32.0" layoutY="114.0" text="nom equipe" />
+            <Button layoutX="235.0" layoutY="297.0" mnemonicParsing="false" onAction="#ajouter_inv" text="envoyer" />
+            <TableView fx:id="invitations" layoutX="330.0" layoutY="57.0" prefHeight="319.0" prefWidth="286.0">
+               <columns>
+                  <TableColumn fx:id="etat" prefWidth="285.0" text="Etat" />
+               </columns>
+            </TableView>
+            <Button layoutX="97.0" layoutY="297.0" mnemonicParsing="false" onAction="#supprimer" text="supprimer" />
+            <ComboBox fx:id="list" layoutX="141.0" layoutY="120.0" prefWidth="150.0" />
+                      <JFXButton fx:id="cb" layoutX="32.0" layoutY="361.0" onAction="#retour_menu" text="&lt;-----" />
+                            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane layoutX="-18.0" prefHeight="55.0" prefWidth="638.0" style="-fx-background-color: #2D75E8;">
+               <children>
+                  <Label layoutX="110.0" layoutY="5.0" text="Gestion Des Invitations" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                      <ImageView fitHeight="45.0" fitWidth="41.0" layoutX="40.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@inv.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+
+
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

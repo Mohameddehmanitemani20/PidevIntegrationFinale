@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="747.0" prefWidth="1012.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.StatistiquesController">
+   <children>
+        
+      <TableView fx:id="formations" layoutX="89.0" layoutY="238.0" prefHeight="344.0" prefWidth="554.0">
+         <columns>
+                     <!--<TableColumn fx:id="id_formation" prefWidth="109.0" text="ID" visible="true" />-->
+
+            <TableColumn fx:id="nom" prefWidth="109.0" text="Nom" />
+            <TableColumn fx:id="debut" prefWidth="116.0" text="Date de début" />
+            <TableColumn fx:id="fin" prefWidth="98.0" text="Date de fin" />
+                     <TableColumn fx:id="dis" prefWidth="137.0" text="Dispositif" />
+            <TableColumn fx:id="prog" prefWidth="92.7999267578125" text="programme" />
+
+
+         </columns>
+      </TableView>
+      <JFXButton fx:id="stat" layoutX="689.0" layoutY="258.0" mnemonicParsing="false" onAction="#consulterStat" text="Par nombre de participants">
+         <font>
+            <Font size="18.0" />
+         </font></JFXButton>
+      <FlowPane layoutX="779.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" />
+      <JFXButton layoutX="711.0" layoutY="374.0" mnemonicParsing="false" onAction="#age" text="par tranche d age" />
+      <JFXButton fx:id="closeButton" buttonType="RAISED" layoutX="34.0" layoutY="668.0" onAction="#retour" ripplerFill="#c33535" text="&lt;----" textOverrun="CENTER_ELLIPSIS" />
+      <JFXButton layoutX="725.0" layoutY="528.0" mnemonicParsing="false" onAction="#hommefemme" text="par genre" />
+      <Pane prefHeight="88.0" prefWidth="1012.0" style="-fx-background-color: #2D75E8;">
+         <children>
+            <Label layoutX="315.0" layoutY="18.0" text="STATISTIQUES" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="65.0" fitWidth="62.0" layoutX="165.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@42165.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

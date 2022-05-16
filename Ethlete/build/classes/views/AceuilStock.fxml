@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="1104.0" style="-fx-background-color: #6b70d5;" stylesheets="@elements/css/interfaceStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AceuilStockController">
+   <children>
+      <BorderPane layoutY="-3.0" prefHeight="518.0" prefWidth="807.0" style="-fx-background-color: #6b70d5;">
+         <left>
+            <VBox prefHeight="528.0" prefWidth="189.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" onMouseClicked="#goBack" prefHeight="61.0" prefWidth="177.0">
+                     <children>
+                        <Label alignment="CENTER" text="LISTE" textFill="#6b70d5">
+                           <font>
+                              <Font name="Corbel Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_CENTER" text="Produits" textFill="#6b70d5">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="57.0" prefWidth="186.0">
+                     <children>
+                        <TextField fx:id="nomp" alignment="CENTER" prefHeight="25.0" prefWidth="109.0" promptText="Nom Produit" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="33.0" prefWidth="186.0">
+                     <children>
+                        <TextField fx:id="prix" alignment="CENTER" prefHeight="25.0" prefWidth="112.0" promptText="Prix" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="49.0" prefWidth="186.0">
+                     <children>
+                        <ComboBox fx:id="choixcateg" prefWidth="150.0" promptText="Categorie" style="-fx-background-color: #6b70d5;" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="186.0">
+                     <children>
+                        <Hyperlink fx:id="categoriesHL" alignment="CENTER" onAction="#gotoCategories" prefHeight="23.0" prefWidth="133.0" text="Modifier les categories" textFill="#605f5f">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="186.0">
+                     <children>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#ajouterproduit" style="-fx-background-color: #6b70d5;" text="Ajouter" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="186.0" />
+                  <Label fx:id="alertlbl" alignment="CENTER" prefHeight="17.0" prefWidth="190.0" />
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+      <ScrollPane layoutX="190.0" layoutY="43.0" prefHeight="467.0" prefWidth="920.0" stylesheets="@scrollpane.css">
+         <content>
+            <GridPane fx:id="prodgrid" prefHeight="0.0" prefWidth="609.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <Pane layoutX="190.0" layoutY="-1.0" prefHeight="38.0" prefWidth="920.0" style="-fx-background-color: #6b70d5;">
+         <children>
+            <FontAwesomeIconView fill="#fbf8f8" glyphName="SHOPPING_CART" layoutX="810.0" layoutY="35.0" size="25" />
+            <Hyperlink layoutX="836.0" layoutY="14.0" onAction="#gotopanier" text="Mon panier" textFill="#f4eded" />
+            <TextField fx:id="rechercherProduit" alignment="TOP_CENTER" layoutX="252.0" layoutY="14.0" onKeyTyped="#rechercherProduit_clicked" prefHeight="25.0" prefWidth="431.0" promptText="Rechercher" />
+            <Hyperlink alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="-22.0" layoutY="18.0" onAction="#gotomodifierproduit" prefHeight="23.0" prefWidth="187.0" text="Modifier Produit" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Hyperlink>
+            <Button layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#TrierProduit" style="-fx-background-color: #ffffff;" textFill="WHITE" />
+            <FontAwesomeIconView fill="#6b70d5" glyphName="SORT_AMOUNT_ASC" layoutX="223.0" layoutY="31.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.DashboardControllerMO">
+   <children>
+      <Pane layoutX="-438.0" layoutY="-187.0" prefHeight="337.0" prefWidth="1167.0" style="-fx-background-color: #7f00ff;" AnchorPane.leftAnchor="-438.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-187.0">
+         <children>
+            <Label layoutX="73.0" layoutY="30.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="91.0" text="School Mangement " textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="833.0" layoutY="248.0" prefHeight="42.0" prefWidth="132.0" text="NEXTEC">
+               <font>
+                  <Font name="Arial Narrow" size="36.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f2f2" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="725.0" layoutY="237.0" text="BY" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <GridPane hgap="15.0" layoutX="45.0" layoutY="158.0" prefHeight="103.0" prefWidth="869.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="158.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #5CB55B; -fx-background-radius: 1em;" GridPane.columnIndex="2">
+               <children>
+                  <Label layoutX="84.0" layoutY="70.0" text="Utilisateur" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="22.0" layoutY="14.0" onAction="#GestionParticipation1" text="Gestion Participation" />
+               </children>
+            </Pane>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #D7534E; -fx-background-radius: 1em;" GridPane.columnIndex="3">
+               <children>
+                  <Label layoutX="57.0" layoutY="70.0" text="Partie Formateur" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="57.0" layoutY="23.0" onAction="#GestionAffectation1" text="Gestion Affectation" />
+               </children>
+            </Pane>
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #EEAC4C; -fx-background-radius: 1em;">
+               <children>
+                  <Label layoutX="67.0" layoutY="70.0" text="Administrateur" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="38.0" layoutY="23.0" onAction="#GestionFormation" text="Gestion Formation" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+        <Pane layoutX="274.0" layoutY="332.0" prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #5CB55B; -fx-background-radius: 1em;">
+         <children>
+            <Label layoutX="71.0" layoutY="70.0" text="Partie Administrateur" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="19.0" layoutY="21.0" onAction="#Gestioncommentaire1" text="Gestion commentaire" />
+         </children>
+      </Pane>
+      
+                <Pane layoutX="48.0" layoutY="332.0" prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #EEAC4C; -fx-background-radius: 1em;">
+         <children>
+            <Label layoutX="67.0" layoutY="70.0" text="Partie Administrateur" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="38.0" layoutY="23.0" onAction="#GestionAffectation2" text="Gestion Affectation" />
+         </children>
+      </Pane>
+      <Pane layoutX="491.0" layoutY="318.0" prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #D7534E; -fx-background-radius: 1em;">
+         <children>
+            <Label layoutX="57.0" layoutY="70.0" text="Partie Participant" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="46.0" layoutY="14.0" onAction="#Gestioncommentaire2" text="Gestion commentaire" />
+         </children>
+      </Pane>
+          <Pane layoutX="274.0" layoutY="462.0" prefHeight="103.0" prefWidth="274.0" style="-fx-background-color: #5CB55B; -fx-background-radius: 1em;">
+         <children>
+            <Label layoutX="71.0" layoutY="70.0" text="Partie Administrateur" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="55.0" layoutY="14.0" onAction="#suivi" text="Suivi Participation +stat" />
+         </children>
+      </Pane>
+      <ImageView fx:id="logo" fitHeight="82.0" fitWidth="121.0" layoutX="14.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

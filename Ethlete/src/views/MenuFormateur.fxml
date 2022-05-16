@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="638.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MenuFormateurController">
+   <children>
+      <ImageView fitHeight="92.0" fitWidth="339.0" layoutX="192.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="178.0" layoutY="494.0" prefHeight="48.0" prefWidth="333.0" style="-fx-background-color: #f0dbff; -fx-background-radius: 1em;">
+         <children>
+            <JFXButton fx:id="feedback" layoutX="53.0" layoutY="6.0" onAction="#art" prefHeight="33.0" prefWidth="269.0" text="Articles" textFill="#5b1a5c">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@813419.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="178.0" layoutY="168.0" prefHeight="55.0" prefWidth="325.0" style="-fx-background-color: #f0dbff; -fx-background-radius: 1em;">
+         <children>
+            <JFXButton fx:id="aff" layoutX="28.0" layoutY="10.0" onAction="#aff" prefHeight="33.0" prefWidth="304.0" text="Consultation des Affectations" textFill="#5b1a5c">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@2038022.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="167.0" layoutY="402.0" prefHeight="48.0" prefWidth="339.0" style="-fx-background-color: #f0dbff; -fx-background-radius: 1em;">
+         <children>
+            <JFXButton fx:id="stat" layoutX="57.0" layoutY="6.0" onAction="#stat" prefHeight="33.0" prefWidth="269.0" text="Statistiques" textFill="#5b1a5c">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@42165.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="170.0" layoutY="283.0" prefHeight="48.0" prefWidth="333.0" style="-fx-background-color: #f0dbff; -fx-background-radius: 1em;">
+         <children>
+            <JFXButton fx:id="part" layoutX="41.0" layoutY="8.0" onAction="#part" prefHeight="33.0" prefWidth="269.0" text="Suivi des participants " textFill="#5b1a5c">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="13.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Downloads/3712233.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="178.0" layoutY="576.0" prefHeight="48.0" prefWidth="333.0" style="-fx-background-color: #f0dbff; -fx-background-radius: 1em;">
+         <children>
+            <JFXButton fx:id="feedback1" layoutX="53.0" layoutY="6.0" onAction="#MAJPROFIL" prefHeight="33.0" prefWidth="269.0" text="MAJ PROFIL" textFill="#5b1a5c">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-nom-100.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

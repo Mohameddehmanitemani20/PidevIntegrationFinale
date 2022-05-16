@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="defaultLayer" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AuthentificationController">
+    <children>
+      <AnchorPane fx:id="mainLayer" layoutX="386.0" prefHeight="565.0" prefWidth="689.0" style="-fx-background-color: white;">
+         <children>
+            <VBox layoutX="68.0" layoutY="100.0" prefHeight="277.0" prefWidth="217.0" spacing="35.0">
+               <children>
+                  <TextField fx:id="nomtf" promptText="Nom" />
+                  <TextField fx:id="numTelTF" promptText="Numero Tel 1" />
+                  <TextField fx:id="emailTF" promptText="Email" />
+                  <PasswordField fx:id="passwordPF" promptText="Password" />
+                  <TextField fx:id="adresseTF" promptText="Adresse" />
+               </children>
+            </VBox>
+            <VBox layoutX="392.0" layoutY="100.0" prefHeight="322.0" prefWidth="249.0" spacing="35.0">
+               <children>
+                  <TextField fx:id="prenomtf" promptText="Prenom" />
+                  <DatePicker fx:id="dpdate" promptText="Date de naissance" />
+                  <TextField fx:id="usernametf" promptText="Username" />
+                  <ImageView fx:id="codePostalIcon" fitHeight="26.0" fitWidth="26.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Icons/icons8-code-postal-80.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="villeIcon" fitHeight="26.0" fitWidth="26.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Icons/icons8-ville-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <JFXButton fx:id="signupbtn" layoutX="452.0" layoutY="411.0" onMouseClicked="#performeSignup" prefHeight="38.0" prefWidth="158.0" style="-fx-background-color: #121212;" styleClass="customButton" text="SignUP" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font></JFXButton>
+            <VBox layoutX="243.0" layoutY="151.0" prefHeight="124.0" prefWidth="226.0" spacing="50.0">
+               <children>
+                  <TextField fx:id="loginTF" promptText="Login" />
+                  <PasswordField fx:id="passwordTF" promptText="Password" />
+               </children>
+            </VBox>
+            <Label fx:id="settingLB1" layoutX="309.0" layoutY="30.0" text="Login">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="valSignInBtn" alignment="CENTER" layoutX="302.0" layoutY="312.0" onMouseClicked="#performLogIn" style="-fx-background-color: #121212;" styleClass="customButton" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></JFXButton>
+            <Label fx:id="closeLB" disable="true" layoutX="641.0" layoutY="55.0" onMouseClicked="#closeScene" prefHeight="31.0" prefWidth="18.0" text="X" textFill="#2b00ff" visible="false">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="userIcon" fitHeight="26.0" fitWidth="33.0" layoutX="212.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-nom-52.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="passwordIcon" fitHeight="31.0" fitWidth="26.0" layoutX="212.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-mot-de-passe-52.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="numTel2Icon" fitHeight="26.0" fitWidth="26.0" layoutX="359.0" layoutY="174.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Icons/icons8-téléphone-débranché-100.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="matFIcon" fitHeight="26.0" fitWidth="26.0" layoutX="359.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-code-barre-80.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="deviseIcon" fitHeight="31.0" fitWidth="32.0" layoutX="356.0" layoutY="232.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Icons/icons8-échange-de-devises-80.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="numtel1Icon" fitHeight="26.0" fitWidth="26.0" layoutX="38.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-téléphone-débranché-100.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="emailIcon" fitHeight="26.0" fitWidth="26.0" layoutX="37.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-mail-48.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="paysIcon" fitHeight="26.0" fitWidth="26.0" layoutX="37.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-mot-de-passe-52.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="adresseIcon" fitHeight="26.0" fitWidth="26.0" layoutX="38.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-adresse-100.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="rsIcon" fitHeight="26.0" fitWidth="26.0" layoutX="37.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/Icons/icons8-nouvelle-entreprise-80.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="610.0" layoutY="14.0" prefHeight="16.0" prefWidth="62.0" spacing="10.0">
+               <children>
+                  <Circle fx:id="reduceBtn" fill="#27c941" onMouseClicked="#reduceOnClick" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#fdbb2d" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="closeBtn" fill="#fc5d57" onMouseClicked="#closeOnClick" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </HBox>
+            <Button fx:id="btnfp" layoutX="370.0" layoutY="270.0" mnemonicParsing="false" onAction="#forgotpassword" style="-fx-background-color: #121212;" text="Forgot password" textFill="WHITE" />
+                     <ComboBox fx:id="comborole1" layoutX="70.0" layoutY="420.0" prefHeight="31.0" prefWidth="217.0" promptText="Role" />
+            <ComboBox fx:id="combogenre" layoutX="70.0" layoutY="489.0" prefHeight="31.0" prefWidth="217.0" promptText="Genre" />
+
+         
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="animLayer" prefHeight="565.0" prefWidth="386.0" style="-fx-background-color: linear-gradient(#020024,#4040e8);" styleClass="anLayer">
+         <children>
+            <Label fx:id="varLB" layoutX="97.0" layoutY="283.0" text="Welcome Back!" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="signUpBtn" layoutX="115.0" layoutY="337.0" onMouseClicked="#signUpForm" prefHeight="50.0" prefWidth="158.0" styleClass="signUpButton" text="Sign Up" />
+            <JFXButton fx:id="swapbtn" layoutX="114.0" layoutY="337.0" onMouseClicked="#swapForm" prefHeight="50.0" prefWidth="158.0" style="-fx-background-color: #121212;" styleClass="signUpButton" text="Sign In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></JFXButton>
+            <Label fx:id="helloLB" layoutX="115.0" layoutY="283.0" text="Hello, Friend" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

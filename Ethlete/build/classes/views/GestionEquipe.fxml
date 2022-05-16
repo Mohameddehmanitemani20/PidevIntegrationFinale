@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="664.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.GestionEquipeController">
+   <children>
+      <Label layoutX="30.0" layoutY="190.0" text="nom equipe" />
+      <TextField fx:id="nom" layoutX="118.0" layoutY="178.0" prefHeight="44.0" prefWidth="197.0" />
+      <Button layoutX="230.0" layoutY="321.0" mnemonicParsing="false" onAction="#ajouter_equipe" text="envoyer" />
+  <TableView fx:id="equipes" layoutX="346.0" layoutY="66.0" prefHeight="319.0" prefWidth="286.0">
+         <columns>
+
+            <TableColumn fx:id="name" prefWidth="285.0" text="Nom" />
+            
+         </columns>
+      </TableView>
+       <Button layoutX="109.0" layoutY="321.0" mnemonicParsing="false" onAction="#afficher_equipe" text="afficher" />
+      <Button layoutX="100.0" layoutY="271.0" mnemonicParsing="false" onAction="#supprimer" text="supprimer" />
+      <Button layoutX="239.0" layoutY="271.0" mnemonicParsing="false" onAction="#modifier" text="modifier" />
+      <JFXButton fx:id="cb" layoutX="42.0" layoutY="345.0" onAction="#retour_menu" text="&lt;----" />
+      <Pane prefHeight="55.0" prefWidth="664.0" style="-fx-background-color: #2D75E8;">
+         <children>
+            <Label layoutX="110.0" layoutY="5.0" text="Gestion Des  Equipes" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="43.0" fitWidth="55.0" layoutX="32.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@3712233.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="recherchetf" layoutX="127.0" layoutY="86.0" onAction="#recherche" promptText="Recherche" />
+      <Button layoutX="14.0" layoutY="89.0" mnemonicParsing="false" onAction="#recherche" text="recherche" />
+      <Button layoutX="24.0" layoutY="134.0" mnemonicParsing="false" onAction="#trier" text="Tri" />
+   </children>
+    
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="767.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionutilisateur1.GUI.FXMLarticleController">
+   <children>
+      <Text layoutX="388.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Article">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <ListView fx:id="listviewarticle" layoutX="130.0" layoutY="63.0" prefHeight="621.0" prefWidth="572.0" />
+      <Button layoutX="730.0" layoutY="117.0" mnemonicParsing="false" onAction="#like" text="Like" />
+      <Button layoutX="390.0" layoutY="721.0" mnemonicParsing="false" onAction="#ajouterarticle" text="Ajout" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/util/DataSource.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/models/User.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/views/GererAffController.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/models/Evenement.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/ServiceEvenement.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/views/AuthentificationController.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/ServiceFormateur.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/util/Mailapi.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/BCrypt.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/ServiceAvis.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/CryptWithMD5.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/ServiceAffectationFormateur.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/UserService.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/views/ParticipationController.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/views/AjouterIntervenantController.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/ServiceInvitation.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/util/Smsapi.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/views/FXMLadminController.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/models/Role.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/ServiceIntervenant.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/ServiceFormation.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/services/matchservice.java</file>
+            <file>file:/C:/Users/MSI/Desktop/PI/Ethlete/src/views/GererFormationController.java</file>
+        </group>
+    </open-files>
+</project-private>

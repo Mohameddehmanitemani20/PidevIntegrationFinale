@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ProduitController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+         <children>
+            <ImageView fitHeight="191.0" fitWidth="190.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@product.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="134.0" fitWidth="179.0" layoutX="34.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@produit.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="nomproduit" alignment="CENTER" layoutX="1.0" layoutY="144.0" prefHeight="17.0" prefWidth="200.0" text="Label" textFill="#6b70d5" />
+            <Label fx:id="prixproduit" alignment="CENTER" layoutX="1.0" layoutY="164.0" prefHeight="17.0" prefWidth="200.0" text="Label" textFill="#6b70d5" />
+            <Label fx:id="idproduit" layoutX="70.0" layoutY="133.0" text="Label" visible="false" />
+            <Label fx:id="categorieproduit" layoutX="70.0" layoutY="133.0" text="Label" visible="false" />
+            <Text fill="#6b70d5" layoutX="121.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TND" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AjouterIntervenantController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css">
+         <children>
+            <TextField fx:id="nom" layoutX="243.0" layoutY="120.0" promptText="Nom" />
+            <TextField fx:id="prenom" layoutX="243.0" layoutY="163.0" promptText="Prénom" />
+            <TextField fx:id="email" layoutX="243.0" layoutY="209.0" promptText="Email" />
+            <TextField fx:id="tel" layoutX="243.0" layoutY="254.0" promptText="Numéro de Téléphone" />
+            <Label layoutX="109.0" layoutY="124.0" text="Nom" />
+            <Label layoutX="109.0" layoutY="167.0" text="Prénom" />
+            <Label layoutX="109.0" layoutY="211.0" text="Email" />
+            <Label layoutX="109.0" layoutY="258.0" text="Téléphone" />
+            <Button layoutX="400.0" layoutY="352.0" mnemonicParsing="false" onAction="#ajouterIntervenant" prefHeight="25.0" prefWidth="164.0" text="Ajouter Intervenant" />
+            <Label layoutX="109.0" layoutY="299.0" text="ID Type" visible="false" />
+            <TextField fx:id="id_type" disable="true" layoutX="243.0" layoutY="304.0" promptText="id_type" visible="false" />
+            <ImageView fx:id="logo" fitHeight="41.0" fitWidth="149.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgIV" fitHeight="150.0" fitWidth="172.0" layoutX="414.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="urlTF" layoutX="243.0" layoutY="77.0" promptText="Insérer l'URL de l'image" />
+            <Button layoutX="428.0" layoutY="77.0" mnemonicParsing="false" onAction="#upload" text="Importer" />
+            <Label layoutX="110.0" layoutY="291.0" text="Type" />
+            <ComboBox fx:id="typeI" layoutX="243.0" layoutY="292.0" prefWidth="150.0" promptText="Choisir le Type de l'Intervenant" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

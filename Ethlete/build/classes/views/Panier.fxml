@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="dateedit" prefHeight="510.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.PanierController">
+   <children>
+      <TableView fx:id="tablecp" layoutX="77.0" layoutY="86.0" onMouseClicked="#Selectcommande" prefHeight="373.0" prefWidth="604.0">
+        <columns>
+          <TableColumn fx:id="idprod" minWidth="0.0" prefWidth="0.0" text="ID produit" />
+          <TableColumn fx:id="nomprod" prefWidth="123.0" text="Nom Produit" />
+            <TableColumn fx:id="prixprod" prefWidth="59.33331298828125" text="Prix" />
+            <TableColumn fx:id="idcom" minWidth="0.0" prefWidth="0.0" text="ID commande" />
+            <TableColumn fx:id="quantitecom" prefWidth="151.33331298828125" text="Quantite" />
+            <TableColumn fx:id="datecom" prefWidth="266.66668701171875" text="Date com" />
+        </columns>
+      </TableView>
+      <TextField fx:id="idedit" layoutX="534.0" layoutY="169.0" promptText="ID commande" visible="false" />
+      <TextField fx:id="quantiteedit" layoutX="724.0" layoutY="144.0" promptText="Quantite" />
+      <TextField fx:id="datedit" layoutX="534.0" layoutY="240.0" promptText="Date" visible="false" />
+      <Button layoutX="741.0" layoutY="182.0" mnemonicParsing="false" onAction="#ModiferCommande" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: #6b70d5;" text="Enregistrer" textFill="WHITE" />
+      <Button layoutX="741.0" layoutY="221.0" mnemonicParsing="false" onAction="#RemoveCommand" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: #6b70d5;" text="Supprimer" textFill="WHITE" />
+      <Button layoutX="741.0" layoutY="293.0" mnemonicParsing="false" onAction="#TrierCommandes" onKeyTyped="#Cherchercommande" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: #6b70d5;" text="Trier" textFill="WHITE" />
+      <TextField fx:id="recherchef" layoutX="77.0" layoutY="48.0" onKeyTyped="#Cherchercommande" prefHeight="25.0" prefWidth="325.0" promptText="Rechercher" style="-fx-background-color: #ffffff;" />
+      <Button layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#gotoacceuilStock" style="-fx-background-color: #6b70d5;" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="#f2eeee" glyphName="CARET_LEFT" text="" />
+         </graphic>
+      </Button>
+      <TextField fx:id="idprodedit" layoutX="531.0" layoutY="73.0" promptText="IDproduit" visible="false" />
+      <TextField fx:id="prixedit" layoutX="531.0" layoutY="108.0" promptText="Prix" visible="false" />
+      <TextField fx:id="nomprodedit" layoutX="724.0" layoutY="108.0" promptText="nomproduit" />
+      <Button layoutX="409.0" layoutY="49.0" mnemonicParsing="false" onAction="#Refresh" style="-fx-background-color: #6b70d5;">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" text="" />
+         </graphic>
+      </Button>
+      <Button layoutX="683.0" layoutY="86.0" mnemonicParsing="false" onAction="#GotoajouterCommande" prefHeight="25.0" prefWidth="27.0" style="-fx-background-color: #6b70d5;">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="CART_PLUS" size="15" wrappingWidth="12.333318293094635" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

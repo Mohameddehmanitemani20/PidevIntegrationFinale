@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ReponseInvitationController">
+     <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="878.0">
+         <children>
+            <Label layoutX="32.0" layoutY="114.0" text="nom equipe" />
+            <Button layoutX="729.0" layoutY="201.0" mnemonicParsing="false" onAction="#refuser" text="accepter" />
+            <TableView fx:id="invitations" layoutX="330.0" layoutY="57.0" prefHeight="319.0" prefWidth="286.0">
+               <columns>
+                  <TableColumn fx:id="etat" prefWidth="285.0" text="Etat" />
+               </columns>
+            </TableView>
+            <Button layoutX="723.0" layoutY="109.0" mnemonicParsing="false" onAction="#accepter" text="refuser" />
+            <ComboBox fx:id="list" layoutX="141.0" layoutY="120.0" prefWidth="150.0" />
+            <JFXButton fx:id="cb" layoutX="788.0" layoutY="328.0" onAction="#retour_menu" text="retour" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
