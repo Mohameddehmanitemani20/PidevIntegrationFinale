@@ -1,0 +1,57 @@
+{% extends 'front.html.twig' %}
+
+ 
+{% block body %}
+<br><br><br>
+    <h1>Des affecations Pas encore Consultées</h1>
+
+    <table class="table">
+        <thead>
+      
+        </thead>
+        <tbody>
+          <div class="row">
+         
+   
+   
+      
+        {% for affectation_formateur in affectation_formateurs %}
+          
+                  <div class="col-sm-4">
+        <div class="card border-success mb-3">    
+   <div class="card-body">
+        <h5 class="card-title">{{ affectation_formateur.formation.nomFormation }}</h5>
+        <p class="card-text">Date Début :{{ affectation_formateur.formation.dateDebut ? affectation_formateur.formation.dateDebut|date('Y-m-d') : '' }}</p>
+          <p class="card-text">Date Fin :{{ affectation_formateur.formation.dateFin ? affectation_formateur.formation.dateFin|date('Y-m-d') : '' }} </p>
+           <p class="card-text">Dispositif:{{ affectation_formateur.formation.dispositif }} </p>
+                <p class="card-text">Dispositif:{{ affectation_formateur.formation.dispositif }} </p>
+           {% if affectation_formateur.reponse.reponse is same as 'Pas encore consulté' %}
+
+    
+   
+        <a href="{{ path('Formation_showpdf', {'id':  affectation_formateur.formation.idFormation}) }}" class="btn btn-primary">Consulter programme</a>
+       <button type="submit" class="btn btn-success">      <a href="{{ path('accepter', {'idAffectation': affectation_formateur.idAffectation}) }}">Accepter</a></button>
+                          <button type="submit" class="btn btn-danger">                    <a href="{{ path('refuser', {'idAffectation': affectation_formateur.idAffectation}) }}">Refuser</a>
+{% endif %}
+         {% if affectation_formateur.reponse.reponse is not same as 'Pas encore consulté' %}
+
+       <p class="card-text">Réponse:{{ affectation_formateur.reponse.reponse }} </p>
+   
+        <a href="{{ path('Formation_showpdf', {'id':  affectation_formateur.formation.idFormation}) }}" class="btn btn-primary">Consulter programme</a>
+      {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+        
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   
+{% endblock %}

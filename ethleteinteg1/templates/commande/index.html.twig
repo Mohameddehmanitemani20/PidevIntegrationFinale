@@ -1,0 +1,37 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Commande index{% endblock %}
+
+{% block body %}
+    <h1>Commande index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+             
+                <th>Quantite</th>
+                <th>Datecom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+               
+                <td>{{ commande.quantite }}</td>
+                <td>{{ commande.datecom ? commande.datecom|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_commande_show', {'idcom': commande.idcom}) }}">show</a>
+                    <a href="{{ path('app_commande_edit', {'idcom': commande.idcom}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_commande_new') }}">Create new</a>
+{% endblock %}

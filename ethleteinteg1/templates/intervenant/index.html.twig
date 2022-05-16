@@ -1,0 +1,45 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Intervenant index{% endblock %}
+
+{% block body %}
+    <h1> Liste des Intervenants </h1> 
+<form method= "POST">
+          <div class="input-group input-group-rounded input-group-merge">
+            <input type="text" name ="nom" class="form-control form-control-rounded form-control-prepended" placeholder="Rechercher" aria-label="Search">
+            
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="fa fa-search"></span>
+              </div>
+            </div>
+          </div>
+        </form>
+<div class="cards">
+    {% for intervenant in intervenants %}
+
+        <div class="card">
+            <img class="card-img-top" src="{{asset('/uploads/' ~ intervenant.imageIn )}}" alt="Card image" >
+            <div class="card-body text-center">
+
+                <h3 class="card-title">{{ intervenant.nom }} {{ intervenant.prenom }}</h3>
+                <h5>{{ intervenant.email }}</h5>
+                <h5>{{ intervenant.telephone }}</h5>
+                <h6>{{ intervenant.idTypeint}}</h6>
+
+
+                <a href="{{ path('app_intervenant_show', {'idInter': intervenant.idInter}) }}">Afficher</a>
+                <a href="{{ path('app_intervenant_edit', {'idInter': intervenant.idInter}) }}">Modifier</a>
+            </div>
+        </div>
+
+    {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+    {% endfor %}
+
+
+
+    <a href="{{ path('app_intervenant_new') }}">Ajouter</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Raison index{% endblock %}
+
+{% block body %}
+    <h1>Raison index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idraison</th>
+                <th>Raisontxt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for raison in raisons %}
+            <tr>
+                <td>{{ raison.idraison }}</td>
+                <td>{{ raison.raisontxt }}</td>
+                <td>
+                    <a href="{{ path('app_raison_show', {'idraison': raison.idraison}) }}">show</a>
+                    <a href="{{ path('app_raison_edit', {'idraison': raison.idraison}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_raison_new') }}">Create new</a>
+{% endblock %}

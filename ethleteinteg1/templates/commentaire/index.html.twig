@@ -1,0 +1,41 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Commentaire index{% endblock %}
+
+{% block body %}
+    <p>Consultation des commentaires</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                {# <th>IdCommentaire</th> #}
+                <th>Contenu</th>
+                   <th>Username</th>
+                      <th>Formation</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commentaire in commentaires %}
+            {# <tr>
+                <td>{{ commentaire.idCommentaire }}</td> #}
+                <td>{{ commentaire.contenu }}</td>
+                    <td>{{ commentaire.idParticipant.username }}</td>
+                        <td>{{ commentaire.idFormation.nomFormation }}</td>
+
+                <td>
+                {# <button class="btn btn-outline-info">
+                    <a href="{{ path('commentaire_show', {'idCommentaire': commentaire.idCommentaire}) }}">show</a></button> #}
+                       {{ include('commentaire/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+  
+{% endblock %}

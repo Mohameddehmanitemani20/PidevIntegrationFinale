@@ -1,0 +1,13 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% extends 'back.html.twig' %}
+
+{% block title %}New Formation{% endblock %}
+
+{% block body %}
+    <h1>Create new Formation</h1>
+
+    {{ include('formation/_form.html.twig') }}
+<button class="btn-warning">
+    <a href="{{ path('formation_index') }}">back to list</a></button>
+{% endblock %}

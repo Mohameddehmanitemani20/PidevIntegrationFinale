@@ -1,0 +1,45 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Formation index{% endblock %}
+
+{% block body %}
+    {{ include('formation/_filtre.html.twig') }}    <h1>Formation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdFormation</th>
+                <th>NomFormation</th>
+                <th>DateDebut</th>
+                <th>DateFin</th>
+                <th>Dispositif</th>
+                <th>Programme</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formation in formations %}
+            <tr>
+                <td>{{ formation.idFormation }}</td>
+                <td>{{ formation.nomFormation }}</td>
+                <td>{{ formation.dateDebut ? formation.dateDebut|date('Y-m-d') : '' }}</td>
+                <td>{{ formation.dateFin ? formation.dateFin|date('Y-m-d') : '' }}</td>
+                <td>{{ formation.dispositif }}</td>
+                <td>{{ formation.programme }}</td>
+                <td>
+                    <a href="{{ path('formation_show', {'idFormation': formation.idFormation}) }}">show</a>
+                    <a href="{{ path('formation_edit', {'idFormation': formation.idFormation}) }}">edit</a>
+                          <a href="{{ path('Formation_showpdf', {'id': formation.idFormation}) }}">PDF</a>
+                                   <a href="{{ path('formation_showbynom', {'nomFormation': formation.nomFormation}) }}">parnom</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('formation_new') }}">Create new</a>
+{% endblock %}

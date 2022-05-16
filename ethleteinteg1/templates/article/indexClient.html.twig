@@ -1,0 +1,157 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+<style>
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+
+
+
+.wrapper {
+    height: 55%;
+    displaY: block;
+    float: left;
+    width: 33.33%;
+
+}
+
+.blog_post {
+    position: relative;
+    padding: 1rem 1rem 6rem 6rem;
+    background: #fff;
+    max-width: 95%;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+}
+
+
+
+h3 {
+    margin: 0 0 0.5rem 0;
+    color: #999;
+    font-size: 1.25rem;
+}
+
+h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+p {
+    margin: 0 0 4.5rem 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.btn_primary {
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    padding: 1.5rem 2rem;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 1px 10px 2rem rgba(255, 94, 98, 0.5);
+    transition: all .2s ease-in;
+    text-decoration: none;
+}
+
+.btn_primary:hover {
+    box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
+}
+
+.img_pod {
+    height: 110px;
+    width: 110px;
+    
+    border-radius: 100%;
+    position: absolute;
+    left: -50px;
+    top: 10px;
+    transform: translateY(-50%);
+  }
+
+
+  
+  img {
+   
+    position: relative;
+    top: 100%;
+    left: 400%;
+    transform: translate(-50%, -50%);
+   
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  }
+
+</style>
+    {# <h1>Article index</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idarticle</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Description</th>
+                <th>Nbrlike</th>
+                <th>User</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.idarticle }}</td>
+                <td>{{ article.titre }}</td>
+                <td>{{ article.contenu }}</td>
+                <td>{{ article.description }}</td>
+                <td>{{ article.nbrlike }}</td> 
+                <td>{{article.idUser}}
+               
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> #}
+  
+        {% for article in articles %}
+
+    <div class="wrapper">
+  <div class="blog_post">
+  
+      <div class="img_pod">
+      <img src="https://pbs.twimg.com/profile_images/890901007387025408/oztASP4n.jpg" alt="random image">
+    </div>
+      <h3>{{article.idUser}}</h3>
+      <h2>{{ article.titre }}</h2>
+      <h4>{{ article.description }}</h4>
+      <p>{{ article.contenu }}.</p>
+      <span>{{ article.nbrlike }} likes</span>
+      <br>
+      <br>
+
+    <a class="btn_primary" href='#'>Read More</a>
+  </div>
+</div>
+        {% endfor %}
+        <br>
+        
+
+{% endblock %}
+

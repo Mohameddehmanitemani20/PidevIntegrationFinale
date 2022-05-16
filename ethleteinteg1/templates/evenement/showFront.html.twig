@@ -1,0 +1,50 @@
+{% extends 'front.html.twig' %}
+
+{% block body %}
+
+
+    <section class="shop-area pt-115 pb-60">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title title-style-two text-center mb-70">
+                        <h2 class="title">Consultez Nos Evénements </h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 3rem; " >
+                {% for evenement in evenements %}
+
+                <div class="wrapper">
+                    <div class="outer">
+                        <img src="{{asset('/uploads/' ~ evenement.imagee )}}" style="width:100%">
+                        <div class="content animated fadeInLeft">
+                            <h3>{{ evenement.typeE }}<br/> {{ evenement.nomEvent }}</h3>
+                            <p>>Du {{ evenement.dateDebut ? evenement.dateDebut|date('d/m/Y') : '' }}
+                                Au {{ evenement.dateFin ? evenement.dateFin|date('d/m/Y') : '' }}</p>
+
+                            <div class="button">
+                                <a href="#">{{ evenement.prixu }} DT</a><a class="cart-btn" href="{{path("add", {'id': evenement.idEvent})}}"><i class="cart-icon ion-bag"></i>PARTICIPER</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <p class="footer">Based on the Silk UI Kit - DesignModo Market</p>
+                </div>
+
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

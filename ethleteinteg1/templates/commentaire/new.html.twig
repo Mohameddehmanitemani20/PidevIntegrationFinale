@@ -1,0 +1,12 @@
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% extends 'front.html.twig' %}
+
+{% block title %}Envoyer Commentaire{% endblock %}
+
+{% block body %}
+    <h1>Envoyer un commentaire</h1>
+
+    {{ include('commentaire/_form.html.twig') }}
+
+{% endblock %}

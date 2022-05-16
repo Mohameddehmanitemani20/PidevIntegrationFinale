@@ -1,0 +1,73 @@
+{% extends 'front.html.twig' %}
+
+
+{% block title %}Votre panier{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block body %}
+    <section class="bg-light p-3">
+        <h1>Votre panier</h1>
+    </section>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>   </th>
+            <th>Evenement</th>
+            <th>Prix Unitaire</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for billet in dataPanier %}
+            <tr>
+                <td><img src="{{asset('/uploads/' ~ billet.evenement.imagee )}}" alt=""style="width: 200px;height:200px"></td>
+                <td>{{ billet.evenement.nomEvent }}</td>
+                <td class="text-end">{{ billet.evenement.prixu }} DT</td>
+                <td>{{ billet.nbrBillet }}</td>
+                <td class="text-end">{{ billet.nbrBillet * billet.evenement.prixu }} DT</td>
+                <td>
+                    <a href="{{path("add", {id: billet.evenement.idEvent})}}"  class="btn btn-success">
+                        <i class="bi bi-cart-plus">+</i>
+                    </a>
+                    <a href="{{path("remove", {id: billet.evenement.idEvent})}}" class="btn btn-warning">
+                        <i class="bi bi-cart-dash">-</i>
+                    </a>
+                    <a href="{{path("delete", {id: billet.evenement.idEvent})}}" class="btn btn-danger">
+                        <i class="bi bi-cart-x">Supprimer</i>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5" class="text-center">Votre panier est vide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td class="text-end">{{ prix }} DT</td>
+            <td>
+                <a href="{{path("delete_all")}}" class="btn btn-danger">
+                    <i class="bi bi-cart-x">Supprimer</i>
+                </a>
+            </td>
+            <td>
+                <a href="{{path("app_payment_checkout")}}" class="btn btn-success">
+                    <i class="bi bi-cart-x">Confirmer la commande</i>
+                </a>
+                <a href="{{path("event_showf")}}" class="btn btn-success">
+                    <i class="bi bi-cart-x">Retour aux Evenements</i>
+                </a>
+            </td>
+        </tr>
+
+        </tfoot>
+    </table>
+
+{% endblock %}

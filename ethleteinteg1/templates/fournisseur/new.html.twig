@@ -1,0 +1,11 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Fournisseur{% endblock %}
+
+{% block body %}
+    <h1>Create new Fournisseur</h1>
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ include('fournisseur/_form.html.twig') }}
+
+    <a href="{{ path('app_fournisseur_index') }}">back to list</a>
+{% endblock %}

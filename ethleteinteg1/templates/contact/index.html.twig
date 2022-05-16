@@ -1,0 +1,18 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Contact index{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('message') %}
+        <div class="alert alert-success" role="alert">
+          {{ message }}
+        </div>
+    {% endfor %}
+    <h1>Nous Contacter</h1>
+    {{ form(contactForm) }}
+
+    <a href="{{ path('app_competition_index') }}">back to list</a>
+
+
+
+{% endblock %}

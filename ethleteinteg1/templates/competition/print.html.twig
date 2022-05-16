@@ -1,0 +1,50 @@
+<h1>Liste des competition</h1>
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    #customers tr:hover {background-color: #ddd;}
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+<img src="https://media.istockphoto.com/vectors/plane-travel-icon-air-travel-around-the-world-flying-around-the-world-vector-id1258141375?k=20&m=1258141375&s=612x612&w=0&h=g1uXnVP6ENUx0lPhtvPT4jOkIXZOj76Sa3R50KbyNP4=" class="logo" style="width:200px;">
+<table id="customers" class="table ">
+    <thead>
+    <tr>
+        <th>nbEquipe</th>
+        <th>date</th>
+        <th>adresse</th>
+        <th>nom</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for competition in competitions %}
+        <tr>
+
+
+            <td>{{ competition.nbEquipe }}</td>
+            <td>{{ competition.date  }}</td>
+            <td>{{ competition.adresse }}</td>
+            <td>{{ competition.nom }}</td>
+
+        </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+    {% endfor %}
+    </tbody>
+</table>

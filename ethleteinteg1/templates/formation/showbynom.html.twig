@@ -1,0 +1,38 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Formation{% endblock %}
+
+{% block body %}
+    <h1>Formation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdFormation</th>
+                <td>{{ formation.idFormation }}</td>
+            </tr>
+            <tr>
+                <th>NomFormation</th>
+                <td>{{ formation.nomFormation }}</td>
+            </tr>
+            <tr>
+                <th>DateDebut</th>
+                <td>{{ formation.dateDebut ? formation.dateDebut|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateFin</th>
+                <td>{{ formation.dateFin ? formation.dateFin|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Dispositif</th>
+                <td>{{ formation.dispositif }}</td>
+            </tr>
+            <tr>
+                <th>Programme</th>
+                <td>{{ formation.programme }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Edit Reclamation{% endblock %}
+
+{% block body %}
+    <h1>Edit Reclamation</h1>
+    <div class="card" style="width:100%">
+               <div class="container">
+               <h4>username</h4>
+               <h3><b>{{ reclamation.idraison.raisontxt }}</b></h3>
+               <h2><b>{{ reclamation.contenu }}</b></h2>
+               <h6><b>{{reclamation.daterec}}</b></h6>
+               <h7><b>{{ reclamation.etat }}</b></h57>
+               
+         </div>
+        </div>
+
+    {{ include('reclamation/_form.html.twig', {'button_label': 'Update'}) }}
+
+   
+{% endblock %}

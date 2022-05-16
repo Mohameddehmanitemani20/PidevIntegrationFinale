@@ -1,0 +1,38 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Journe{% endblock %}
+
+{% block body %}
+    <h1>Journe</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdJourne</th>
+                <td>{{ journe.idJourne }}</td>
+            </tr>
+            <tr>
+                <th>Numjourne</th>
+                <td>{{ journe.numjourne }}</td>
+            </tr>
+            <tr>
+                <th>DateJourne</th>
+                <td>{{ journe.dateJourne }}</td>
+            </tr>
+            <tr>
+                <th>IdCompetition</th>
+                <td>{{ journe.idCompetition }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div>
+    <a href="{{ path('app_competition_index') }}">back to list Competitions</a>
+</div>
+<div>
+    <a href="{{ path('app_journe_index') }}">back to list Journes</a>
+</div>
+<div>
+    <a href="{{ path('app_journe_edit', {'idJourne': journe.idJourne}) }}">edit</a>
+</div>
+    {{ include('journe/_delete_form.html.twig') }}
+{% endblock %}

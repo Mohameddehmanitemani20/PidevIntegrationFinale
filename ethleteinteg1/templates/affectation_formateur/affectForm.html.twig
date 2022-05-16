@@ -1,0 +1,208 @@
+{% extends 'front.html.twig' %}
+
+ 
+{% block body %}
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800;);
+.snip1541 {
+  background-color: #fff;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  max-width: 315px;
+  min-width: 230px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.snip1541 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
+.snip1541 img {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+.snip1541 figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1em;
+  opacity: 0;
+  -webkit-transform: translateX(75%) rotate(180deg);
+  transform: translateX(75%) rotate(180deg);
+}
+
+.snip1541 figcaption:before {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #AFE1AF;
+  border-radius: 50%;
+  content: '';
+  height: 100px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  z-index: -1;
+}
+
+.snip1541 h3 {
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.snip1541 h3 span {
+  display: block;
+  font-weight: 800;
+}
+
+.snip1541 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.snip1541:hover > img,
+.snip1541.hover > img {
+  opacity: 0.1;
+}
+
+.snip1541:hover figcaption,
+.snip1541.hover figcaption {
+  -webkit-transform: translate(0px) rotate(0deg);
+  transform: translate(0px) rotate(0deg);
+  opacity: 1;
+}
+
+h5 {
+ font-family:georgia,serif;font-size:25px;
+ font-style:italic;
+ color:#3E2F2F;
+ letter-spacing:0;
+ line-height:1.529em;
+ padding:0;
+
+ }
+
+h5 span {
+ font-family:baskerville,'palatino linotype',georgia,serif;
+ font-size:25px;
+ font-weight:100;
+
+}
+
+.introduction {
+ font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;
+ font-weight:bold;
+ margin:10px 0px 10px 20px; /* Tweak this to your liking (also add padding) */
+ letter-spacing:3px;
+ }
+
+h1 { color: #cba135; font-family: 'Helvetica Neue', sans-serif; font-size: 35px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+</style>
+<br><br><br>
+    <h1>Consultation des affecations</h1>
+
+    <table class="table">
+        <thead>
+      
+        </thead>
+        <tbody>
+          <div class="row">
+         
+   
+   
+      
+        {% for affectation_formateur in affectation_formateurs %}
+          
+
+                  <div class="col-sm-4">
+        <div class="card border-success mb-3">    
+   <div class="card-body">
+        <h5 class="card-title">{{ affectation_formateur.formation.nomFormation }}</h5>
+          {% if affectation_formateur.formateur.genre is same as 'homme' %}
+        <figure class="snip1541">
+  <img src="https://www.licciardi-formation.com/wp-content/uploads/2017/03/visuel-formation-formateurs-v3-430x300.jpg" alt="sample97" />
+  <figcaption>
+    <h3 color="white">Accept</h3>
+  </figcaption>
+  <a href="{{ path('accepter', {'idAffectation': affectation_formateur.idAffectation}) }}"></a>
+</figure>
+
+   {% else %}
+        <figure class="snip1541">
+  <img src="https://adimpletionum.fr/wp-content/uploads/2019/04/formatrice.png" alt="sample97" />
+  <figcaption>
+    <h3 color="white">Accept</h3>
+  </figcaption>
+  <a href="{{ path('accepter', {'idAffectation': affectation_formateur.idAffectation}) }}"></a>
+</figure>
+{% endif %}
+        <p class="card-text">Date Début :{{ affectation_formateur.formation.dateDebut ? affectation_formateur.formation.dateDebut|date('Y-m-d') : '' }}</p>
+          <p class="card-text">Date Fin :{{ affectation_formateur.formation.dateFin ? affectation_formateur.formation.dateFin|date('Y-m-d') : '' }} </p>
+           <p class="card-text">Dispositif:{{ affectation_formateur.formation.dispositif }} </p>
+                <p class="card-text">Dispositif:{{ affectation_formateur.formation.dispositif }} </p>
+           {% if affectation_formateur.reponse.reponse is same as 'Pas encore consulté' %}
+
+    
+   
+        <a href="{{ path('Formation_showpdf', {'id':  affectation_formateur.formation.idFormation}) }}" class="btn btn-primary">Consulter programme</a>
+       <button type="submit" class="btn btn-success">      <a href="{{ path('accepter', {'idAffectation': affectation_formateur.idAffectation}) }}">Accepter</a></button>
+                          <button type="submit" class="btn btn-danger">                    <a href="{{ path('refuser', {'idAffectation': affectation_formateur.idAffectation}) }}">Refuser</a>
+{% endif %}
+         {% if affectation_formateur.reponse.reponse is not same as 'Pas encore consulté' %}
+
+       <p class="card-text">Réponse:{{ affectation_formateur.reponse.reponse }} </p>
+   
+        <a href="{{ path('Formation_showpdf', {'id':  affectation_formateur.formation.idFormation}) }}" class="btn btn-primary">Consulter programme</a>
+      {% endif %}
+
+   
+       
+      </div>
+    </div>
+  </div>
+
+</div>
+        
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   <script>
+   
+   $(".hover").mouseleave(
+  function() {
+    $(this).removeClass("hover");
+  }
+);
+   </script>
+{% endblock %}

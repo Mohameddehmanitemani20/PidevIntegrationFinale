@@ -1,0 +1,38 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}journe index{% endblock %}
+
+{% block body %}
+    <h1>journe index</h1>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th>IdJourne</th>
+            <th>Numjourne</th>
+            <th>DateJourne</th>
+            <th>IdCompetition</th>
+            <th>actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for journe in journe %}
+            <tr>
+                <td>{{ journe.idJourne }}</td>
+                <td>{{ journe.numjourne }}</td>
+                <td>{{ journe.dateJourne }}</td>
+                <td>{{ journe.idCompetition }}</td>
+                <td>
+                    <a href="{{ path('app_journe_showf', {'idJourne': journe.idJourne}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Edit Raison{% endblock %}
+
+{% block body %}
+    <h1>Edit Raison</h1>
+
+    {{ include('raison/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_raison_index') }}">back to list</a>
+
+    {{ include('raison/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Competition index{% endblock %}
+
+{% block body %}
+    <h1>Competition index</h1>
+    <form method= "POST">
+        <div class="input-group input-group-rounded input-group-merge">
+            <input type="text" name ="nom" class="form-control form-control-rounded form-control-prepended" placeholder="Rechercher" aria-label="Search">
+
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <span class="fa fa-search"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>nbEquipe</th>
+            <th>date</th>
+            <th>adresse</th>
+            <th>nom</th>
+            <th>Action</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for competition in competitions %}
+
+            <tr>
+                <td>{{ competition.nbEquipe }}</td>
+                <td>{{ competition.date  }}</td>
+                <td>{{ competition.adresse }}</td>
+                <td>{{ competition.nom }}</td>
+                <td>
+                    <a href="{{ path('app_competition_show', {'idCompetition': competition.idCompetition}) }}">show</a>
+                    <a href="{{ path('app_competition_edit', {'idCompetition': competition.idCompetition}) }}">edit</a>
+                    <a href="{{ path('competition', {'idCompetition': competition.idCompetition}) }}">showPdf</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        {{ knp_pagination_render(competitions) }}
+        </tbody>
+    </table>
+    <div>
+    <a href="{{ path('app_competition_new') }}">Create new</a>
+    </div>
+
+<div>
+    <a href="{{ path('app_contact') }}">send mail</a>
+</div>
+{% endblock %}

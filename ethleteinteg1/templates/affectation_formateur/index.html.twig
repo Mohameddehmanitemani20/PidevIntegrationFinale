@@ -1,0 +1,67 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Gestion des affectations{% endblock %}
+
+{% block body %}
+    <h1>Gestion des affectations</h1>
+ <form method= "POST">
+          <div class="input-group input-group-rounded input-group-merge">
+            <input type="text" name ="forma" class="form-control form-control-rounded form-control-prepended" placeholder="Entre Formateur" aria-label="Search">
+            
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="fa fa-search"></span>
+              </div>
+            </div>
+          </div>
+        </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                {# <th>IdAffectation</th> #}
+                   <th>Nom Formateur</th>
+                      <th>Nom Formation</th>
+                         <th>Réponse</th>
+                <th>Delete</th>
+                          <th>update</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for affectation_formateur in affectation_formateurs %}
+            <tr>
+                {# <td>{{ affectation_formateur.idAffectation }}</td> #}
+
+                <td>{{ affectation_formateur.formateur.username }}</td>
+                                <td>{{ affectation_formateur.formation.nomFormation }}</td>
+
+                <td>{{ affectation_formateur.reponse.reponse }}</td>
+
+          
+                   <td>    <a> {{ include('affectation_formateur/_delete_form.html.twig') }}</a>
+                                 
+                   
+                </td>
+
+                    <td>  &nbsp;&nbsp;  <a> <a  href="{{ path('affectation_formateur_edit', {'idAffectation': affectation_formateur.idAffectation}) }}"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+  <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+</svg></a> 
+                                 
+                   
+                </td>
+                      {# <td>
+                    <a href="{{ path('affectation_formateur_show', {'idAffectation': affectation_formateur.idAffectation}) }}">show</a>
+                    <a href="{{ path('affectation_formateur_edit', {'idAffectation': affectation_formateur.idAffectation}) }}">edit</a>
+                </td> #}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" role="button"  href="{{ path('affectation_formateur_new') }}">Ajouter une affectation</a>
+{% endblock %}

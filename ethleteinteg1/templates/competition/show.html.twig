@@ -1,0 +1,41 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Competition{% endblock %}
+
+{% block body %}
+    <h1>Competition</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdCompetition</th>
+                <td>{{ competition.idCompetition }}</td>
+            </tr>
+            <tr>
+                <th>NbEquipe</th>
+                <td>{{ competition.nbEquipe }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ competition.date }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ competition.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ competition.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div>
+    <a href="{{ path('app_competition_index') }}">back to list</a>
+</div>
+    <a href="{{ path('app_competition_edit', {'idCompetition': competition.idCompetition}) }}">edit</a>
+<div>
+    <a href="{{ path('app_journe_show',{'idJourne': competition.idCompetition}) }}">show Journe</a>
+</div>
+
+    {{ include('competition/_delete_form.html.twig') }}
+{% endblock %}

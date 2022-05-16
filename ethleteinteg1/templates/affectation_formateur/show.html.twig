@@ -1,0 +1,22 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}AffectationFormateur{% endblock %}
+
+{% block body %}
+    <h1>AffectationFormateur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdAffectation</th>
+                <td>{{ affectation_formateur.idAffectation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('affectation_formateur_index') }}">back to list</a>
+
+    <a href="{{ path('affectation_formateur_edit', {'idAffectation': affectation_formateur.idAffectation}) }}">edit</a>
+
+    {{ include('affectation_formateur/_delete_form.html.twig') }}
+{% endblock %}

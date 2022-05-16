@@ -1,0 +1,34 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}journe{% endblock %}
+
+{% block body %}
+    <h1>Journe</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>IdJourne</th>
+            <td>{{ journe.idJourne }}</td>
+        </tr>
+        <tr>
+            <th>Numjourne</th>
+            <td>{{ journe.numjourne }}</td>
+        </tr>
+        <tr>
+            <th>DateJourne</th>
+            <td>{{ journe.dateJourne }}</td>
+        </tr>
+        <tr>
+            <th>IdCompetition</th>
+            <td>{{ journe.idCompetition }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_journe_userindex') }}">back to list</a>
+
+
+
+
+{% endblock %}

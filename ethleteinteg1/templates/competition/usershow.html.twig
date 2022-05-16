@@ -1,0 +1,38 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}competition{% endblock %}
+
+{% block body %}
+    <h1>Competition</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>IdCompetition</th>
+            <td>{{ competition.idCompetition }}</td>
+        </tr>
+        <tr>
+            <th>NbEquipe</th>
+            <td>{{ competition.nbEquipe }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ competition.date }}</td>
+        </tr>
+        <tr>
+            <th>Adresse</th>
+            <td>{{ competition.adresse }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ competition.nom }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_competition_userindex') }}">back to list</a>
+
+
+
+
+{% endblock %}

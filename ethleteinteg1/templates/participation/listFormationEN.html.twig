@@ -1,0 +1,119 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Formation index{% endblock %}
+
+{% block body %}
+
+  
+
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/scripts.js" defer></script>
+
+    <h1>Liste des formations
+    
+
+    </h1> 
+      
+    {# <form method= "POST">
+          <div class="input-group input-group-rounded input-group-merge">
+            <input type="text" name ="forma" class="form-control form-control-rounded form-control-prepended" placeholder="Rechercher" aria-label="Search">
+            
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="fa fa-search"></span>
+              </div>
+            </div>
+          </div>
+        </form> #}
+   
+        <thead>
+        
+        <tbody>
+          <table class="table">
+            <div class="row">
+         
+   
+   
+        {% for formation in list %}
+          
+                {# <td>{{ formation.idFormation }}</td>
+                <td>{{ formation.nomFormation }}</td>
+                <td>{{ formation.dateDebut ? formation.dateDebut|date('Y-m-d') : '' }}</td>
+                <td>{{ formation.dateFin ? formation.dateFin|date('Y-m-d') : '' }}</td>
+                <td>{{ formation.dispositif }}</td>
+                <td>   <a href="{{ path('Formation_showpdf', {'id': formation.idFormation}) }}">PDF</a></td>
+                <td>
+                    
+               
+                       
+                              <a href="{{ path('participer', {'id': formation.idFormation}) }}">participer</a>
+                               
+    <a  role="button" href="{{ path('commentaire_new', {'idF': formation.idFormation}) }}">Commenter</a>  
+                </td> #}
+                     <div class="col-sm-4">
+        <div class="card border-success mb-3">    
+   <div class="card-body">
+        <h5 class="card-title">{{ formation.nomFormation }}</h5>
+        <img src="http://www.emploi.nat.tn/formations/img/bg-img/bg6.svg"  width="200" height="160">
+        <p class="card-text">Date Début :{{ formation.dateDebut ? formation.dateDebut|date('Y-m-d') : '' }}</p>
+          <p class="card-text">Date Fin :{{ formation.dateFin ? formation.dateDebut|date('Y-m-d') : '' }} </p>
+           <p class="card-text">Dispositif:{{ formation.dispositif }} </p>
+
+        
+   
+        <a href="{{ path('Formation_showpdf', {'id': formation.idFormation}) }}" class="btn btn-primary">Consulter programme</a>
+           <a href="{{ path('participer1', {'id': formation.idFormation,'idU': 11}) }}" class="btn btn-success">Participer</a>
+            <a class="btn btn-info" href="{{ path('commentaire_new', {'idF': formation.idFormation,'idU': 11}) }}">Commenter</a>  
+            <div class="fb-share-button" 
+data-href="https://www.your-domain.com/your-page.html" 
+data-layout="button_count">
+</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+    
+            {% endfor %}
+        </tbody>
+      </table>   
+   {# <div class="modal" id="modal2" role="dialog">
+        <div class="modal-content">
+      
+      
+
+
+    <h1>Envoyer un Commentaire</h1>
+
+   <div class="col">
+      <input type="text" id="c" class="form-control" placeholder="Commenter ici">
+    </div>
+
+    
+
+    
+
+           
+         
+                <a   role="button" data-dismiss="dialog">Envoyer</a>
+             
+           
+        </div>
+    </div> #}
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+{% endblock %}

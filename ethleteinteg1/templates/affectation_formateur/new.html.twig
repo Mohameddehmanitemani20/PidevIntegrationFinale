@@ -1,0 +1,11 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New AffectationFormateur{% endblock %}
+
+{% block body %}
+    <h1>Ajouter une affectation</h1>
+
+    {{ include('affectation_formateur/_form.html.twig') }}
+
+    <button class="btn-warning"> <a  href="{{ path('affectation_formateur_index') }}">Retour à la liste</a></button>
+{% endblock %}

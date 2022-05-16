@@ -1,0 +1,274 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Formation index{% endblock %}
+
+{% block body %}
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600;);
+.snip1573 {
+  background-color: #cba135;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  max-width: 315px;
+  min-width: 230px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.snip1573 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.snip1573:before,
+.snip1573:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color: #000000;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+  content: '';
+  opacity: 0.9;
+  z-index: 1;
+}
+h5 {
+ font-family:georgia,serif;font-size:25px;
+ font-style:italic;
+ color:#3E2F2F;
+ letter-spacing:0;
+ line-height:1.529em;
+ padding:0;
+
+ }
+
+h5 span {
+ font-family:baskerville,'palatino linotype',georgia,serif;
+ font-size:25px;
+ font-weight:100;
+
+}
+
+.introduction {
+ font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;
+ font-weight:bold;
+ margin:10px 0px 10px 20px; /* Tweak this to your liking (also add padding) */
+ letter-spacing:3px;
+ }
+.snip1573:before {
+  -webkit-transform: skew(45deg) translateX(-155%);
+  transform: skew(45deg) translateX(-155%);
+}
+
+.snip1573:after {
+  -webkit-transform: skew(45deg) translateX(155%);
+  transform: skew(45deg) translateX(155%);
+}
+
+.snip1573 img {
+  backface-visibility: hidden;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.snip1573 figcaption {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  -webkit-box-shadow: 0 0 10px #000000;
+  box-shadow: 0 0 10px #000000;
+}
+h1 { color: #cba135; font-family: 'Helvetica Neue', sans-serif; font-size: 35px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+.snip1573 h3 {
+  background-color: #cba135;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.snip1573 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.snip1573:hover > img,
+.snip1573.hover > img {
+  opacity: 0.5;
+}
+
+.snip1573:hover:before,
+.snip1573.hover:before {
+  -webkit-transform: skew(45deg) translateX(-55%);
+  transform: skew(45deg) translateX(-55%);
+}
+
+.snip1573:hover:after,
+.snip1573.hover:after {
+  -webkit-transform: skew(45deg) translateX(55%);
+  transform: skew(45deg) translateX(55%);
+}
+
+.snip1573:hover figcaption,
+.snip1573.hover figcaption {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+</style>
+  
+
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/scripts.js" defer></script>
+
+    <h1>Liste des formations
+    
+
+    </h1> 
+      
+    <form method= "POST">
+          <div class="input-group input-group-rounded input-group-merge">
+            <input type="text" name ="forma" class="form-control form-control-rounded form-control-prepended" placeholder="Rechercher" aria-label="Search">
+            
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="fa fa-search"></span>
+              </div>
+            </div>
+          </div>
+        </form>
+   
+        <thead>
+        
+        <tbody>
+          <table class="table">
+            <div class="row">
+         
+   
+   
+        {% for formation in list %}
+          
+                {# <td>{{ formation.idFormation }}</td>
+                <td>{{ formation.nomFormation }}</td>
+                <td>{{ formation.dateDebut ? formation.dateDebut|date('Y-m-d') : '' }}</td>
+                <td>{{ formation.dateFin ? formation.dateFin|date('Y-m-d') : '' }}</td>
+                <td>{{ formation.dispositif }}</td>
+                <td>   <a href="{{ path('Formation_showpdf', {'id': formation.idFormation}) }}">PDF</a></td>
+                <td>
+                    
+               
+                       
+                              <a href="{{ path('participer', {'id': formation.idFormation}) }}">participer</a>
+                               
+    <a  role="button" href="{{ path('commentaire_new', {'idF': formation.idFormation}) }}">Commenter</a>  
+                </td> #}
+                     <div class="col-sm-4">
+        <div class="card border-primary mb-3">    
+   <div class="card-body">
+        <h5 class="card-title">{{ formation.nomFormation }}</h5>
+        <figure class="snip1573">
+  <img src="https://www.ref68.com/v2/wp-content/uploads/2015/08/Formation.jpg" alt="sample89" />
+  <figcaption>
+    <h3>Participate Now</h3>
+  </figcaption>
+  <a href="{{ path('participer1', {'id': formation.idFormation,'idU': 11}) }}"></a>
+</figure>
+
+
+        {# <img src="https://img2.freepng.fr/20180511/yue/kisspng-computer-icons-training-and-development-education-5af65101eb1b50.762579331526092033963.jpg"  width="200" height="160"> #}
+        <p class="card-text">Date Début :{{ formation.dateDebut ? formation.dateDebut|date('Y-m-d') : '' }}</p>
+          <p class="card-text">Date Fin :{{ formation.dateFin ? formation.dateDebut|date('Y-m-d') : '' }} </p>
+           <p class="card-text">Dispositif:{{ formation.dispositif }} </p>
+
+        
+   
+        <a href="{{ path('Formation_showpdf', {'id': formation.idFormation}) }}" class="btn btn-primary">Consulter programme<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-ruled-fill" viewBox="0 0 16 16">
+  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM3 9h10v1H6v2h7v1H6v2H5v-2H3v-1h2v-2H3V9z"/>
+</svg></a>
+           <a href="{{ path('participer1', {'id': formation.idFormation,'idU': 11}) }}" class="btn btn-success">Participer</a>
+            <a class="btn btn-info" href="{{ path('commentaire_new', {'idF': formation.idFormation,'idU': 11}) }}">Commenter <img src="https://cdn2.iconfinder.com/data/icons/medical-healthcare-26/28/Chat-2-512.png" height="20" width="20"></a>  
+            {# <div class="fb-share-button" 
+data-href="https://www.your-domain.com/your-page.html" 
+data-layout="button_count">
+</div> #}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+    
+            {% endfor %}
+        </tbody>
+      </table>   
+   {# <div class="modal" id="modal2" role="dialog">
+        <div class="modal-content">
+      
+      
+
+
+    <h1>Envoyer un Commentaire</h1>
+
+   <div class="col">
+      <input type="text" id="c" class="form-control" placeholder="Commenter ici">
+    </div>
+
+    
+
+    
+
+           
+         
+                <a   role="button" data-dismiss="dialog">Envoyer</a>
+             
+           
+        </div>
+    </div> #}
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+
+</script>
+  
+{% endblock %}

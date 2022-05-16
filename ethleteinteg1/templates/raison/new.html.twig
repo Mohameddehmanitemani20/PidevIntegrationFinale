@@ -1,0 +1,11 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Raison{% endblock %}
+
+{% block body %}
+    <h1>Create new Raison</h1>
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ include('raison/_form.html.twig') }}
+
+    <a href="{{ path('app_raison_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Raison{% endblock %}
+
+{% block body %}
+    <h1>Raison</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idraison</th>
+                <td>{{ raison.idraison }}</td>
+            </tr>
+            <tr>
+                <th>Raisontxt</th>
+                <td>{{ raison.raisontxt }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_raison_index') }}">back to list</a>
+
+    <a href="{{ path('app_raison_edit', {'idraison': raison.idraison}) }}">edit</a>
+
+    {{ include('raison/_delete_form.html.twig') }}
+{% endblock %}

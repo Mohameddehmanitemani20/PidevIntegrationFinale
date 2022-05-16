@@ -1,0 +1,139 @@
+{% extends 'indexproduit.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+{% block body %}
+     <h1>Produits</h1>
+     {{ form_start(formr) }}
+
+<div class="form-row align-items-end" >
+ <div class="col">
+   {{ form_row(formr.nom) }}
+ </div>
+
+  <div class="col">
+   <div class="form-group">
+      <button type="submit" class="btn btn-success">Rechercher</button>
+    </div>
+ </div>
+</div>
+ {{ form_end(formr) }}
+     
+       <!--Start sidebar-wrapper-->
+        <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+         <div class="brand-logo">
+           <img src="{{ asset('assets/images/logowhite.png')}}"  height="20" width="78">
+           <h5 class="logo-text">Dashboard</h5> 
+         </div>
+       <ul class="sidebar-menu do-nicescrol">
+         <li class="sidebar-header"></li>
+         <div class="form-row align-items-end" >
+         <div class="col">
+
+       {{ form_start(formp) }}
+        <div class="form-group " >
+        <div class="col">
+        {{ form_row(formp.minPrice) }}
+        
+         </div>
+         <div class="col">
+         {{ form_row(formp.maxPrice) }}
+        <button type="submit" class="btn btn-success">Rechercher</button>
+        </div>
+        <div class="col">
+        </div>
+        </div>
+        {{ form_end(formp) }}
+
+
+
+
+
+ {{ form_start(forms) }}
+
+          {{ form_row(forms.category) }}
+         </div>
+           <div class="form-group">
+             <div class="col">
+              <button type="submit" class="btn btn-success">Filtrer</button>
+             </div>
+           </div>
+          </div>
+          {{ form_end(forms) }} 
+ 
+        <li>
+          <a href="{{ path('produit') }}">
+            <i class="zmdi zmdi-format-list-bulleted"></i> <span>Gestion Produits</span>
+          </a>
+        </li>
+      
+
+      <li>
+        <a href="{{ path('fournisseur') }}">
+          <i class="zmdi zmdi-grid"></i> <span>Gestion Fournisseurs</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ path('reclamation') }}">
+          <i class="zmdi zmdi-calendar-check"></i> <span>Gestion Reclamations</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ path('commande') }}">
+          <i class="zmdi zmdi-face"></i> <span>Gestion Commandes</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ path('raison') }}">
+          <i class="zmdi zmdi-lock"></i> <span>Raisons</span>
+        </a>
+      </li>
+
+       <li>
+        <a href="{{ path('categorie') }}">
+          <i class="zmdi zmdi-account-circle"></i> <span>Categories</span>
+        </a>
+      </li>
+
+      <li class="sidebar-header">LABELS</li>
+      <li><a href="javaScript:void();"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>
+      <li><a href="javaScript:void();"><i class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
+      <li><a href="javaScript:void();"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
+
+    </ul>
+   
+   </div>
+   <!--End sidebar-wrapper-->
+
+
+ 
+
+
+
+<h2><a href="{{ path('app_produit_new') }}"><button class="button-34"> +Ajouter un produit</button></a></h2>
+    
+       <div class="cards">
+           {% for produit in produits %}
+        
+           <div class="card">
+           <img class="card-img-top" src="{{ asset('back/images/produit.png')}}" alt="Card image">
+            <div class="card-body text-center">
+            <h4 class="card-title">{{produit.nomp}}</h4>
+            <p class="price">{{produit.prix}} DT</p>
+
+            <p><a href="{{ path('app_produit_show', {'idp': produit.idp}) }}"<button class="button-22">voir plus</button></a></p>
+            {{ include('produit/_delete_form.html.twig') }}
+          </div>
+        </div>
+         
+           {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+    
+  
+{% endblock %}

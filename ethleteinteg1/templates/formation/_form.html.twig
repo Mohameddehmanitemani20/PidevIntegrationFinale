@@ -1,0 +1,10 @@
+
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {#{ form_widget(form) }#}
+   {{form_row(form.nomFormation)}} 
+    {{form_row(form.dateDebut)}} 
+     {{form_row(form.dateFin)}} 
+      {{form_row(form.dispositif)}} 
+      {{form_row(form.programme)}} 
+    <button class="btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

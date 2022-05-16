@@ -1,0 +1,13 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Edit AffectationFormateur{% endblock %}
+
+{% block body %}
+    <h1>Edit AffectationFormateur</h1>
+
+    {{ include('affectation_formateur/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('affectation_formateur_index') }}">back to list</a>
+
+    {{ include('affectation_formateur/_delete_form.html.twig') }}
+{% endblock %}

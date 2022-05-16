@@ -1,0 +1,58 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Journe index{% endblock %}
+
+{% block body %}
+    <h1>Journe index</h1>
+    <div class="box bg-gradient-primary">
+
+    </div>
+    <form method= "POST">
+        <select name="numjourne" id ="dynamic_select">
+            <option> Methode Tri</option>
+            <option value="{{path('app_journe_recherche') }}">par numero Journe</option>
+            <input type="text" name ="numjourne" class="form-control form-control-rounded form-control-prepended" placeholder="Rechercher" aria-label="Search">
+
+        </select>
+        <input  type="submit" value ="recherche ">
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdJourne</th>
+                <th>Numjourne</th>
+                <th>DateJourne</th>
+                <th>IdCompetition</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for journe in journes %}
+            <tr>
+                <td>{{ journe.idJourne }}</td>
+                <td>{{ journe.numjourne }}</td>
+                <td>{{ journe.dateJourne }}</td>
+                <td>{{ journe.idCompetition }}</td>
+                <td>
+                    <a href="{{ path('app_journe_show', {'idJourne': journe.idJourne}) }}">show</a>
+                    <a href="{{ path('app_journe_edit', {'idJourne': journe.idJourne}) }}">edit</a>
+                    <a href="{{ path('journe', {'idJourne': journe.idJourne}) }}">showPdf</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        {{ knp_pagination_render(journes) }}
+        </tbody>
+    </table>
+    <div>
+    <a href="{{ path('app_journe_new') }}">Create new</a>
+    </div>
+
+<div>
+        <a href="{{ path('app_contact') }}">send mail</a>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Matchs index{% endblock %}
+
+{% block body %}
+    <h1>Matchs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdMatch</th>
+                <th>Equipe1</th>
+                <th>Equipe2</th>
+                <th>Etat</th>
+                <th>IdJourne</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for match in matchs %}
+            <tr>
+                <td>{{ match.idMatch }}</td>
+                <td>{{ match.equipe1 }}</td>
+                <td>{{ match.equipe2 }}</td>
+                <td>{{ match.etat }}</td>
+                <td>{{ match.idJourne }}</td>
+                <td>
+                    <a href="{{ path('app_matchs_showf', {'idMatch': match.idMatch}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
